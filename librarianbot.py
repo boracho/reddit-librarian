@@ -7,7 +7,7 @@ sub_philo = 'philosophy'
 sub_science = 'science'
 library = 'infiniteknowledge'
 key_flair = 'physics'
-keyword_philo = 'aristotle'
+keyword_philo = 'consciousness'
 keyword_test = 'snow'
 keyword_test_two = 'intersection'
 keyword_sci = 'quantum'
@@ -19,7 +19,7 @@ r.login('NSA_Robutt', 'jfetbs170')
 subreddit = r.get_subreddit(sub_philo)
 
 def submission_parser(subreddit, keyword):
-    for submission in subreddit.get_hot(limit=200):
+    for submission in subreddit.get_hot(limit=10):
         lowercase_title = str(submission).lower()
         if submission.id not in already_posted_id and submission.url not in already_posted_url:
             if keyword in lowercase_title:
