@@ -16,7 +16,7 @@ already_posted_url = []
 
 r = praw.Reddit(user_agent = 'Librarian Experiment')
 r.login('NSA_Robutt', 'jfetbs170')
-subreddit = r.get_subreddit(sub_sci)
+subreddit = r.get_subreddit(sub_science)
 
 def submission_parser(subreddit, keyword):
     for submission in subreddit.get_hot(limit=10):
