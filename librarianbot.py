@@ -22,7 +22,7 @@ def submission_parser(subreddit, keyword):
     for submission in subreddit.get_hot(limit=10):
         lowercase_title = str(submission).lower()
         if submission.id not in already_posted_id and submission.url not in already_posted_url:
-            if keyword in submission.link_flair_text:
+            if keyword == submission.link_flair_text.lower():
                 already_posted_id.append(submission.id)
                 already_posted_url.append(submission.url)
                 r.submit(library, submission.title, url=submission.url)
